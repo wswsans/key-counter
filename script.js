@@ -60,8 +60,8 @@ $(() => {
 		if (count < 666) {
 			$("body").css("backgroundColor", "#FFF");
 			$("span#count").css("color", "#000");
-			$("span.r").css("color", "#F00");
-			$("span.g").css("color", "#0F0");
+			$("span.r").css("color", "#BFBFBF");
+			$("span.g").css("color", "#7F7F7F");
 		} else if (count == 666) {
 			$("body").css("backgroundColor", "#000");
 			$("span#count").css("color", "#FFF");
