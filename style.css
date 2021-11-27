@@ -1,0 +1,69 @@
+body {
+	margin: 0;
+	text-align: center;
+}
+
+*:focus {
+	/* クリックしたときの青枠 */
+	outline: none;
+}
+span, button, label, br, img, li {
+	/* 選択の青色 */
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	 -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Firefox */
+		-ms-user-select: none; /* Internet Explorer/Edge */
+			user-select: none; /* Non-prefixed version, currently
+									supported by Chrome and Opera */
+	-webkit-user-drag:none;
+	-khtml-user-drag:none;
+	user-drag: none;
+}
+
+/* メニュー */
+div#menu {
+	position: absolute;
+	right: 0;
+}
+
+div#menu span {
+	margin-right: 15px;
+	margin-left: 60px;
+	cursor: pointer;
+	font-size: 40px;
+}
+
+ul {
+	display: none;
+	position: absolute;
+	margin-top: 0;
+	font-size: 15px;
+}
+
+li {
+	color: #F00;
+	list-style: none;
+	transition: all 300ms 0s ease;
+}
+li:hover {
+	font-size: 17px;
+}
+li.active {
+	color: #0F0;
+}
+
+/* 文字カウント, 文字 */
+div#str {
+	position: absolute;
+	text-align: left;
+	z-index: -1;
+}
+span.r {
+	font-size: 20px;
+	color: #FFF;
+}
+span.g {
+	font-size: 20px;
+	color: #000;
+}
