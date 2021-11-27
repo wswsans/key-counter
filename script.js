@@ -57,11 +57,16 @@ $(() => {
 			if (k == "Enter") k = "¬<br>";
 			$("div#input")[0].innerHTML += `<span class="${(check) ? "g" : "r"}">${k}</span>`;
 		}
-		if (count == 666) {
+		if (count < 666) {
+			$("body").css("backgroundColor", "#FFF");
+			$("span#count").css("color", "#000");
+			$("span.r").css("color", "#F00");
+			$("span.g").css("color", "#0F0");
+		} else if (count == 666) {
 			$("body").css("backgroundColor", "#000");
 			$("span#count").css("color", "#FFF");
 			$("div#input").css("zIndex", "-1").children().css("color", "#000");
-		} else if (count > 666) {
+		} else if (666 < count) {
 			$("body").css("backgroundColor", "#191919");
 		}
 	});
