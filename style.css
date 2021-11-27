@@ -7,7 +7,7 @@ body {
 	/* クリックしたときの青枠 */
 	outline: none;
 }
-span, button, label, br, img, li {
+button, label, br, img, li, span:not(div#input span) {
 	/* 選択の青色 */
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Safari */
@@ -28,7 +28,7 @@ div#menu {
 }
 
 div#menu span {
-	margin-right: 15px;
+	margin-right: 25px;
 	margin-left: 60px;
 	cursor: pointer;
 	font-size: 40px;
@@ -37,6 +37,7 @@ div#menu span {
 ul {
 	display: none;
 	position: absolute;
+	text-align: left;
 	margin-top: 0;
 	font-size: 15px;
 }
@@ -54,16 +55,15 @@ li.active {
 }
 
 /* 文字カウント, 文字 */
-div#str {
+div#input {
 	position: absolute;
 	text-align: left;
-	z-index: -1;
+	font-size: 20px;
+	z-index: 1;
 }
 span.r {
-	font-size: 20px;
-	color: #FFF;
+	color: #BFBFBF;
 }
 span.g {
-	font-size: 20px;
-	color: #000;
+	color: #7F7F7F;
 }

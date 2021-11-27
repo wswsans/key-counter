@@ -16,7 +16,7 @@ $(() => {
 	$("li#reset").click(e => {
 		count = 0;
 		$("span#count").text("000");
-		$("div#str").html("");
+		$("div#input").html("");
 	});
 
 	$("html").on("keydown", event => {
@@ -42,17 +42,25 @@ $(() => {
 				count++;
 				check = true;
 			}
+		} else if (event.code == "Backspace") {
+			$("div#input").children().last().remove();
+			if ($("li#DelCount").hasClass("active")) {
+				count--;
+			}
 		}
-		$("span#count").text(("000" + count).slice(-3));
+
+		count = (count <= 0) ? 0 : count;
+		$("span#count").text( String(count).padStart(3, '0') );
+
 		if (["Esc", "Tab", "Con", "Shi", "Cap", "Alt", "Met", "Bac"].indexOf(event.code.slice(0, 3)) == -1) {
 			k = event.key;
-			if (k == "Enter") k = "<br>";
-			$("div#str")[0].innerHTML += `<span class="${(check) ? "g" : "r"}">${k}</span>`;
+			if (k == "Enter") k = "¬<br>";
+			$("div#input")[0].innerHTML += `<span class="${(check) ? "g" : "r"}">${k}</span>`;
 		}
 		if (count == 666) {
-			$("div#str").children().css("color", "#000");
 			$("body").css("backgroundColor", "#000");
 			$("span#count").css("color", "#FFF");
+			$("div#input").css("zIndex", "-1").children().css("color", "#000");
 		} else if (count > 666) {
 			$("body").css("backgroundColor", "#191919");
 		}
